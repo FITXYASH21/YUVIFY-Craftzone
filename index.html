@@ -1,32 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- BASIC SEO (≤140 chars) -->
+  <!-- SEO -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YUVIFY CREATIONS — Launching Soon</title>
-  <meta name="description" content="YUVIFY CREATIONS is launching soon. Unique 3D-printed figures, gifts and décor. Follow us on Instagram for updates and early access.">
-
-  <!-- Favicon + Social preview (replace files in /assets) -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta name="description" content="YUVIFY CREATIONS is launching soon. Premium 3D-printed figures, portraits, toys, gifts & décor. Follow us for updates and early access.">
   <meta property="og:title" content="YUVIFY CREATIONS — Launching Soon">
-  <meta property="og:description" content="Unique 3D-printed figures, gifts and décor. Follow us on Instagram for updates and early access.">
-  <meta property="og:image" content="assets/social-card.png">
+  <meta property="og:description" content="Premium 3D-printed figures, portraits, toys, gifts & décor. Follow us for updates and early access.">
   <meta property="og:type" content="website">
-  <meta name="robots" content="index,follow" />
-
+  <!-- Favicon (purple→cyan to match logo) -->
+  <link rel="icon" href='data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%237c3aed"/><stop offset="1" stop-color="%2306b6d4"/></linearGradient></defs><rect rx="14" width="64" height="64" fill="url(%23g)"/><path d="M32 14a18 18 0 1 1 0 36a18 18 0 1 1 0-36z" fill="white" opacity=".08"/><circle cx="32" cy="32" r="9" fill="white" opacity=".6"/></svg>'>
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --ink:#0b0b0b;          /* black text */
-      --paper:#fff;           /* white bg  */
-      --btn:#000;             /* button fill */
-      --btnText:#fff;         /* button text */
-      --icon:#ff4da6;         /* pink icons */
-      --border:#111;          /* strokes */
-      --radius:14px;
+      /* brand from logo */
+      --brand1:#7c3aed; /* purple */
+      --brand2:#06b6d4; /* cyan   */
+      --ink:#0b0b0b;
+      --paper:#ffffff;
+      --accent:#000;
+      --icon:#ff4da6; /* socials pink */
+      --radius:18px;
     }
     *{box-sizing:border-box}
     html,body{margin:0}
@@ -34,207 +31,26 @@
       background:var(--paper);
       color:var(--ink);
       font-family:"Josefin Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.5;
+      line-height:1.55;
       text-align:center;
     }
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    /* header */
+    .header{display:flex;justify-content:center;align-items:center;padding:8px 0 0}
+    .logo{display:flex;gap:14px;align-items:center;justify-content:center}
+    .logo svg{height:110px; width:auto; display:block} /* BIGGER LOGO */
 
-    .wrap{max-width:1200px; margin:0 auto; padding:24px}
+    /* gradient brand stripe under header */
+    .brandbar{height:6px; max-width:1100px; margin:8px auto 0; border-radius:999px; background:linear-gradient(90deg,var(--brand1),var(--brand2));}
 
-    /* abstract dotted/liney corners */
-    .bg{
-      position:relative;
-      overflow:hidden;
-      padding:16px;
-      border-radius:var(--radius);
-    }
-    .bg:before, .bg:after{
-      content:""; position:absolute; inset:-10%;
-      background:
-        radial-gradient(220px 220px at 6% 10%, rgba(0,0,0,.12) 0 30%, transparent 32%) no-repeat,
-        radial-gradient(180px 180px at 96% 8%, rgba(0,0,0,.12) 0 30%, transparent 32%) no-repeat,
-        radial-gradient(170px 170px at 8% 92%, rgba(0,0,0,.12) 0 30%, transparent 32%) no-repeat,
-        radial-gradient(190px 190px at 94% 84%, rgba(0,0,0,.12) 0 30%, transparent 32%) no-repeat;
-      pointer-events:none;
-    }
-
-    /* sections like movable “cards” */
+    /* card sections */
     .section{
-      background:#fff;
-      border:2px solid var(--border);
-      border-radius:18px;
-      padding:40px 20px;
-      margin:22px auto;
-      max-width:1100px;
+      background:#fff;border:2px solid #111;border-radius:22px;
+      padding:40px 20px;margin:22px auto;max-width:1100px;
+      box-shadow:0 14px 40px rgba(0,0,0,.08);
     }
 
-    /* logo area */
-    .brand{
-      display:flex; align-items:center; justify-content:center; gap:14px; margin:10px 0 4px 0;
-    }
-    .brand img{height:86px; width:auto; display:block} /* replace assets/logo.png */
+    /* abstract BG corners */
+    .bg{position
 
-    /* headings to match your screenshot copy */
-    .lead{
-      margin:18px 0 8px 0;
-      font-weight:600;
-      letter-spacing:.18em;
-      font-size:clamp(18px,2.5vw,26px);
-    }
-    .big{
-      margin:0 0 24px 0;
-      font-weight:700;
-      letter-spacing:.14em;
-      font-size:clamp(42px,9vw,86px); /* big LAUNCHING SOON */
-    }
-    .desc{
-      max-width:980px;
-      margin:0 auto 22px auto;
-      font-size:clamp(16px,2.2vw,24px);
-    }
-
-    /* two-line rectangular button (double border/offset) */
-    .btn{
-      --off:6px;
-      position:relative;
-      display:inline-block;
-      padding:16px 34px;
-      background:var(--btn);
-      color:var(--btnText);
-      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight:700;
-      border:2px solid var(--border);
-      border-radius:8px;
-      text-decoration:none;
-      box-shadow:none;
-    }
-    .btn:after{
-      content:"";
-      position:absolute; inset:auto; left:var(--off); top:var(--off);
-      width:100%; height:100%;
-      border:2px solid var(--border);
-      border-radius:8px;
-      z-index:-1;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .divider{height:2px; background:#111; width:100%; max-width:1100px; margin:28px auto; opacity:.15}
-
-    /* subscribe box → Insta ID only */
-    .subscribe{
-      max-width:600px; margin:0 auto;
-      border:2px solid var(--border);
-      border-radius:18px;
-      padding:24px;
-      background:#fff;
-    }
-    .input{
-      width:100%; padding:16px 14px; border:2px solid var(--border);
-      border-radius:10px; font-size:18px; margin-bottom:14px; outline:none;
-    }
-
-    /* footer with pink icons */
-    footer{
-      margin:20px 0 32px 0;
-    }
-    .socials{
-      display:flex; justify-content:center; align-items:center; gap:16px;
-      padding:16px; border-top:2px solid var(--border); border-bottom:2px solid var(--border);
-    }
-    .socials a{display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:2px solid var(--border); border-radius:50%; text-decoration:none}
-    .socials svg{width:22px; height:22px; fill:var(--icon)}
-
-    /* cookie bar */
-    .cookie{
-      position:fixed; left:14px; right:14px; bottom:14px; background:#111; color:#fff;
-      border:2px solid #000; border-radius:14px; padding:12px 16px; display:flex; gap:12px;
-      align-items:center; justify-content:space-between; flex-wrap:wrap; z-index:50;
-    }
-    .cookie .btn{background:#fff; color:#000}
-
-    @media (max-width:560px){
-      .brand img{height:72px}
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap bg">
-
-    <!-- CARD 1: LOGO + HERO COPY -->
-    <section class="section">
-      <div class="brand">
-        <!-- replace this file with your real logo -->
-        <img src="assets/logo.png" alt="YUVIFY CREATIONS logo">
-      </div>
-
-      <p class="lead">THE WAIT IS ALMOST OVER WE'RE</p>
-      <h1 class="big">LAUNCHING SOON</h1>
-
-      <p class="desc">
-        Discover unique 3D printed portrait figures, toys, gifts, and decor items that bring your ideas to life.
-        Perfect for personal gifts or home decor.
-      </p>
-
-      <a class="btn" href="#collection">Explore Our Collection</a>
-    </section>
-
-    <div class="divider" role="separator"></div>
-
-    <!-- CARD 2: GET NOTIFIED (INSTA) -->
-    <section class="section" id="notify">
-      <h2 style="letter-spacing:.18em; margin-top:0">GET NOTIFIED</h2>
-      <div class="subscribe">
-        <input class="input" id="insta" type="text" placeholder="Enter your Instagram ID (optional)">
-        <!-- button goes to your Insta page -->
-        <a class="btn" id="followBtn" href="https://www.instagram.com/mr_masculine.ig" target="_blank" rel="noopener">Follow on Instagram</a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="section" style="padding:0">
-      <div class="socials">
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/mr_masculine.ig" target="_blank" aria-label="Instagram" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 16.8 2.8 2.8 0 0 0 12 10.2zm5.6-2.3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
-        </a>
-        <!-- X/Twitter -->
-        <a href="#" aria-label="X">
-          <svg viewBox="0 0 24 24"><path d="M3 3h3.7l5.4 7.2L18.1 3H21l-7.3 9.6L21 21h-3.7l-5.6-7.5L6 21H3l7.3-9.4L3 3z"/></svg>
-        </a>
-        <!-- Facebook -->
-        <a href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M13 10h3l-1 4h-2v7h-4v-7H7v-4h2V8a4 4 0 0 1 4-4h3v4h-3c-.6 0-1 .4-1 1v1z"/></svg>
-        </a>
-      </div>
-      <p style="margin:12px 0 18px 0; font-size:14px">© <span id="year"></span> YUVIFY CREATIONS. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <!-- COOKIE CONSENT -->
-  <div id="cookie" class="cookie" role="dialog" aria-live="polite" aria-label="Cookie consent">
-    <span>This website uses cookies to enhance your experience and for basic analytics.</span>
-    <a class="btn" href="#" id="accept">Accept</a>
-  </div>
-
-  <script>
-    // append Insta ID as UTM (optional)
-    document.getElementById('followBtn').addEventListener('click', function(e){
-      var id = document.getElementById('insta').value.trim();
-      if(id){
-        this.href = "https://www.instagram.com/mr_masculine.ig/?utm_source=comingsoon&utm_medium=button&utm_campaign=notify&user=" + encodeURIComponent(id);
-      }
-    });
-
-    // cookie consent
-    var c = document.getElementById('cookie');
-    var a = document.getElementById('accept');
-    if(localStorage.getItem('yuvify.cookies') === 'ok'){ c.style.display = 'none'; }
-    a.addEventListener('click', function(ev){
-      ev.preventDefault();
-      localStorage.setItem('yuvify.cookies', 'ok');
-      c.style.display = 'none';
-    });
-
-    // year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+        
