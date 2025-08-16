@@ -5,100 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>YUVIFY Craftzone — Launching Soon</title>
   <meta name="description" content="Discover unique 3D printed portrait figures, toys, gifts, and decor items that bring your ideas to life. Perfect for personal gifts or home decor.">
-  <!-- Fonts similar to the reference -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* THEME */
     :root{
-      --bg:#ffdbe3;        /* logo background pink */
-      --text:#121212;      /* near-black text */
-      --accent:#121212;    /* button + icon color */
+      --bg:#ffdbe3;
+      --text:#121212;
+      --accent:#121212;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    <header class="container">
-  <img src="assets/assets/logo.png" alt="YUVIFY Craftzone Logo" class="logo">
-</header>
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
+      font-family: Inter, sans-serif;
       background:var(--bg);
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
+      color:var(--text);
     }
-    .container{width:min(1100px,92vw);margin-inline:auto;padding-inline:clamp(12px,2vw,24px)}
-    header{
-      display:flex;align-items:center;justify-content:center;
-      padding:clamp(16px,3vw,28px) 0;
-    }
-    .logo{width:clamp(160px,22vw,280px);height:auto;display:block}
-
-    .hero{text-align:center;padding:clamp(24px,7vw,64px) 0}
-    .eyebrow{
-      font-family:Montserrat, Inter, sans-serif;
-      letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.9;
-      font-size:clamp(12px,1.4vw,14px);margin:0 0 8px 0;
-    }
-    .headline{
-      font-family:Montserrat, Inter, sans-serif;font-weight:800;
-      font-size:clamp(40px,8vw,84px);line-height:1.03;margin:0 0 12px 0;
-    }
-    .subtitle{
-      font-size:clamp(14px,1.6vw,18px);line-height:1.7;max-width:900px;margin:0 auto 22px;
-    }
-    .btn-primary{
-      display:inline-block;text-decoration:none;background:var(--accent);color:#fff;
-      padding:14px 22px;border-radius:999px;font-weight:600;
-      font-size:clamp(14px,1.6vw,16px);transition:transform .15s ease,opacity .15s ease;
-    }
-    .btn-primary:hover{transform:translateY(-2px);opacity:.95}
-
-    .divider{height:1px;background:rgba(0,0,0,.14);margin:clamp(28px,6vw,64px) auto;width:min(900px,92%);border-radius:2px}
-
-    .notify{text-align:center;padding-bottom:clamp(24px,7vw,64px)}
-    .notify-title{
-      font-family:Montserrat, Inter, sans-serif;font-weight:700;margin:0 0 10px;
-      font-size:clamp(20px,3.5vw,36px)
-    }
-    .notify-help{margin:0 0 16px;font-size:clamp(13px,1.5vw,16px)}
-    .notify-form{display:grid;place-items:center}
-    .input-row{
-      display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;
-      width:min(560px,94vw);background:rgba(18,18,18,.05);border:1px solid rgba(18,18,18,.18);
-      border-radius:14px;padding:8px 8px 8px 12px;
-    }
+    .container{width:min(1100px,92vw);margin:auto;padding-inline:20px}
+    header{display:flex;justify-content:center;align-items:center;padding:20px 0}
+    .logo{width:clamp(150px,22vw,280px);height:auto;display:block}
+    .hero{text-align:center;padding:60px 0}
+    .eyebrow{font-family:Montserrat, sans-serif;letter-spacing:.2em;text-transform:uppercase;font-weight:700;font-size:14px;margin:0 0 8px}
+    .headline{font-family:Montserrat, sans-serif;font-weight:800;font-size:64px;margin:0 0 16px}
+    .subtitle{font-size:18px;line-height:1.6;max-width:800px;margin:0 auto 24px}
+    .btn-primary{background:var(--accent);color:#fff;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600;display:inline-block}
+    .divider{height:1px;background:rgba(0,0,0,.2);margin:50px auto;width:80%}
+    .notify{text-align:center;padding:40px 0}
+    .notify-title{font-family:Montserrat, sans-serif;font-weight:700;font-size:28px;margin:0 0 10px}
+    .notify-help{margin:0 0 16px;font-size:15px}
+    .input-row{display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(18,18,18,.05);border:1px solid rgba(18,18,18,.18);border-radius:12px;padding:8px;width:min(500px,90%);margin:auto}
     .input-row .at{font-weight:700;opacity:.7}
-    .input-row input{
-      border:none;outline:none;background:transparent;padding:10px 6px;
-      font-size:clamp(14px,1.6vw,16px);min-width:0;
-    }
-    .btn-secondary{
-      appearance:none;border:none;background:var(--accent);color:#fff;padding:10px 16px;
-      border-radius:12px;font-weight:600;cursor:pointer;font-size:clamp(13px,1.5vw,15px)
-    }
-
-    .footer{display:grid;gap:10px;padding:clamp(18px,3vw,24px) 0 40px;text-align:center}
-    .socials{display:inline-flex;gap:14px;justify-content:center}
+    .input-row input{border:none;outline:none;background:transparent;flex:1;padding:10px;font-size:15px}
+    .btn-secondary{border:none;background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+    footer{text-align:center;padding:30px 0}
+    .socials{display:flex;justify-content:center;gap:14px;margin-bottom:10px}
     .icon{color:var(--accent);opacity:.9}
-    .icon:hover{opacity:1}
-    .legal{font-size:13px;opacity:.7;margin:0}
-    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-    @media (max-width:520px){
-      .headline{line-height:1.05}
-      .input-row{gap:6px}
-    }
+    .legal{font-size:13px;opacity:.7}
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Logo at front -->
   <header class="container">
-    <!-- Place logo.png alongside this HTML file -->
-    <img src="logo.png" alt="YUVIFY Craftzone Logo" class="logo">
+    <img src="assets/assets/logo.png" alt="YUVIFY Craftzone Logo" class="logo">
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <main class="container hero">
     <p class="eyebrow">THE WAIT IS ALMOST OVER WE'RE</p>
     <h1 class="headline">LAUNCHING SOON</h1>
@@ -109,55 +60,32 @@
     <a href="#top" class="btn-primary">Explore our collection</a>
   </main>
 
-  <!-- Divider -->
-  <section class="container divider" aria-hidden="true"></section>
+  <div class="divider"></div>
 
-  <!-- Get Notified (Insta only) -->
-  <section class="container notify" id="notify">
+  <!-- Get Notified -->
+  <section class="notify">
     <h2 class="notify-title">Get Notified</h2>
     <p class="notify-help">Drop your Insta ID and we’ll DM you when we go live.</p>
-    <!-- Connect this form later to your backend / Google Form / FormSubmit -->
     <form class="notify-form" action="#top" method="get">
-      <label for="insta" class="visually-hidden">Instagram ID</label>
       <div class="input-row">
         <span class="at">@</span>
-        <input id="insta" name="instagram_id" required placeholder="your_insta_id"
-               pattern="^[A-Za-z0-9._]{1,30}$" title="Letters, numbers, dot or underscore only.">
+        <input id="insta" name="instagram_id" required placeholder="your_insta_id">
         <button type="submit" class="btn-secondary">Subscribe</button>
       </div>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer class="container footer">
+  <footer>
     <div class="socials">
-      <a href="#" aria-label="Instagram" class="icon" title="Instagram">
-        <!-- Instagram -->
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      </a>
-      <a href="#" aria-label="Facebook" class="icon" title="Facebook">
-        <!-- Facebook -->
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.7V12h2.7V9.8c0-2.7 1.6-4.2 4-4.2 1.2 0 2.4.2 2.4.2v2.6h-1.3c-1.3 0-1.8.8-1.8 1.7V12h3l-.5 2.9h-2.5v7A10 10 0 0 0 22 12"></path>
-        </svg>
-      </a>
-      <a href="#" aria-label="YouTube" class="icon" title="YouTube">
-        <!-- YouTube -->
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-          <path d="M23.5 7.1a3 3 0 0 0-2.1-2.1C19.5 4.5 12 4.5 12 4.5s-7.5 0-9.4.5A3 3 0 0 0 .5 7.1C0 9 0 12 0 12s0 3 .5 4.9a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15 24 12 24 12s0-3-.5-4.9zM9.7 15.6V8.4L15.8 12l-6.1 3.6z"/>
-        </svg>
-      </a>
+      <a href="#" class="icon">📷</a>
+      <a href="#" class="icon">📘</a>
+      <a href="#" class="icon">▶️</a>
     </div>
     <p class="legal">© <span id="year"></span> YUVIFY — All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
 
